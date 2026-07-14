@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss";
+
+@config "../tailwind.config.js";
+
+@theme {
+  --font-poppins: "Poppins", sans-serif;
+}
+
+:root {
+  color-scheme: light;
+  --bg: #F9F7F2;
+  --text: #1B2A41;
+  --muted: #E5E1DB;
+  --accent: #C5A059;
+  --surface: #FFFFFF;
+}
+
+.dark {
+  color-scheme: dark;
+  --bg: #1B2A41;
+  --text: #F9F7F2;
+  --muted: #17243B;
+  --accent: #C5A059;
+  --surface: #22304B;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 4px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+body {
+  width: 100dvw;
+  overflow-x: hidden;
+}
+
+@layer utilities {
+  .loading-front {
+    stroke-dasharray: 48, 144;
+    stroke-dashoffset: 192;
+    animation: dash_682 1.4s linear infinite;
+  }
+
+  @keyframes dash_682 {
+    72.5% {
+      opacity: 0;
+    }
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+}
